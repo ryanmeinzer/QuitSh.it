@@ -1,8 +1,8 @@
 // Select
 let newShitFormContainer = document.getElementById('new-shit-form-container')
 let shitContainer = document.getElementById('shit-container')
-const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
-const tipAdapter = new TipAdapter("http://localhost:3000/tips")
+const shitAdapter = new ShitAdapter("http://ryanmeinzer.github.io/QuitShit-Frontend/shits")
+const tipAdapter = new TipAdapter("http://ryanmeinzer.github.io/QuitShit-Frontend/tips")
 
 // Display Add Shit Form
 newShitFormContainer.innerHTML = shitForm()
