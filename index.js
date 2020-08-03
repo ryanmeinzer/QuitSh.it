@@ -9,7 +9,7 @@ newShitFormContainer.innerHTML = shitForm()
 function shitForm() {
     return `
       <form class="add-shit-form" id="shit-form">
-        <input type="text" name="name" value="">
+        <input type="text" name="name" value="" required>
         <input type="submit" value="Add New Shit to Quit">
       </form>
   `
@@ -24,10 +24,18 @@ newShitFormContainer.addEventListener('submit', function (e) {
         e.target.reset()
 // Do - Add Shit
         shitAdapter.addShit(shit)
-            .then(function (shit) {
-                shitContainer.innerHTML += makeShitDiv(shit)
-                shitContainer.innerHTML +=  makeTipsDiv(shit)
-            })
+        .then(function (shit) {
+            // if (shit.message) {
+            //     alert(shit.message)
+            // } else {
+            shitContainer.innerHTML += makeShitDiv(shit)
+            shitContainer.innerHTML +=  makeTipsDiv(shit)
+            // }
+        })
+        // .catch(function (error) {
+        //     alert("error message")
+        //     document.body.innerHTML = error.message
+        // });
     }
 })
 
@@ -66,7 +74,7 @@ function makeTipLi(tip) {
 function tipForm(shit_id, shit) {
     return `
       <form class="add-tip-form" id="${shit_id}-tip-form">
-        <input type="text" name="description" value="">
+        <input type="text" name="description" value="" required>
         <input type="hidden" name="shit_id" value="${shit_id}">
         <input type="submit" value="Add Quit Tip for ${shit.name}">
       </form>
