@@ -12,7 +12,8 @@ class TipAdapter {
             body: JSON.stringify({
                 tip: {
                     description: tip[0],
-                    shit_id: tip[1]
+                    shit_id: tip[1],
+                    tip_count: 0
                 }
             })
         })

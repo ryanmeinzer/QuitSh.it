@@ -55,7 +55,7 @@ function makeShitDiv(shit) {
     return `
     <div id=shit-${shit.id} class='shit-div'>
         <div id=shit-${shit.id}-details>
-            <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitCount='${shit.shit_count}'> 💩 ${shit.shit_count} ▲ </button></h3>
+            <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}'> 💩 ${shit.shit_count} ▲ </button></h3>
         </div>
     </div>
     `
@@ -71,7 +71,7 @@ function makeTipsDiv(shit) {
     `
 }
 function makeTipLi(tip) {
-    return `<li>${tip.description}</li>`
+    return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}'> 💩 ${tip.tip_count} ▲ </button> </li>`
 }
 
 // Display Add Tip Form
@@ -122,5 +122,28 @@ shitContainer.addEventListener('click', (e) => {
             })
         })
         e.target.innerText = `💩 ${e.target.dataset.shitcount} ▲ `
+    }
+})
+
+// Increment Tip Counter
+// Select - Tip Count
+// Listen - Add Tip Count
+shitContainer.addEventListener('click', (e) => {
+    if (e.target.className == "tip-button") {
+        // Do - Increase Tip Count
+        e.target.dataset.tipcount = parseInt(e.target.dataset.tipcount) + 1
+        fetch(`https://quitshit-backend.herokuapp.com/tips/${e.target.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                tip: {
+                    tip_count: e.target.dataset.tipcount
+                }
+            })
+        })
+        e.target.innerText = `💩 ${e.target.dataset.tipcount} ▲ `
     }
 })
