@@ -1,9 +1,9 @@
 // Select
 let newShitFormContainer = document.getElementById('new-shit-form-container')
 let shitContainer = document.getElementById('shit-container')
-const shitAdapter = new ShitAdapter("https://quitshit-backend.herokuapp.com/shits")
-const tipAdapter = new TipAdapter("https://quitshit-backend.herokuapp.com/tips")
-
+const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
+const tipAdapter = new TipAdapter("http://localhost:3000/tips")
+// const shits = [] 
 // Display Add Shit Form
 newShitFormContainer.innerHTML = shitForm()
 function shitForm() {
@@ -42,6 +42,7 @@ newShitFormContainer.addEventListener('submit', function (e) {
 // Display Shits & Tips
 shitAdapter.fetchShits()
     .then(function (shitsArray) {
+        // shits = shitsArray
         shitsArray.forEach(function (shit) {
             shitContainer.innerHTML += makeShitDiv(shit)
             shitContainer.innerHTML += makeTipsDiv(shit)
@@ -49,16 +50,16 @@ shitAdapter.fetchShits()
     })
 function makeShitDiv(shit) {
     return `
-    <div id=shit-${shit.id}>
+    <div id=shit-${shit.id} class='shit-div'>
         <div id=shit-${shit.id}-details>
-            <h3>${shit.name}</h3>
+            <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitCount='${shit.shit_count}'> 💩 ${shit.shit_count}</button></h3>
         </div>
     </div>
     `
 }
 function makeTipsDiv(shit) {
     return `
-    <div id=shit-${shit.id}-tips>
+    <div id=shit-${shit.id}-tips class='tip-div'>
         ${tipForm(shit.id, shit)}
         <ul id=shit-${shit.id}-tips-list>
             ${shit.tips.map(makeTipLi).join("")}
@@ -95,5 +96,28 @@ shitContainer.addEventListener('submit', function (e) {
                     let tipShitListUl = document.getElementById(`shit-${tip.shit_id}-tips-list`)
                     tipShitListUl.innerHTML += makeTipLi(tip)
             })
+    }
+})
+
+// Increment Shit Counter
+// Select - Shit Count
+// Listen - Add Shit Count
+shitContainer.addEventListener('click', (e) => {
+    if (e.target.className == "shit-button") {
+// Do - Increase Shit Count
+        e.target.dataset.shitcount = parseInt(e.target.dataset.shitcount) + 1
+        fetch(`http://localhost:3000/shits/${e.target.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                shit: {
+                    shit_count: e.target.dataset.shitcount
+                }
+            })
+        })
+        e.target.innerText = `💩 ${e.target.dataset.shitcount}`
     }
 })
