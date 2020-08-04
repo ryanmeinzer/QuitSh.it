@@ -1,9 +1,12 @@
 // Select
 let newShitFormContainer = document.getElementById('new-shit-form-container')
 let shitContainer = document.getElementById('shit-container')
-const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
-const tipAdapter = new TipAdapter("http://localhost:3000/tips")
+// const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
+// const tipAdapter = new TipAdapter("http://localhost:3000/tips")
+const shitAdapter = new ShitAdapter("https://http://quitshit-backend.herokuapp.com/shits")
+const tipAdapter = new TipAdapter("https://http://quitshit-backend.herokuapp.com/tips")
 // const shits = [] 
+
 // Display Add Shit Form
 newShitFormContainer.innerHTML = shitForm()
 function shitForm() {
