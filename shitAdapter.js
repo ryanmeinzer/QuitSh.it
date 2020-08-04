@@ -15,7 +15,8 @@ class ShitAdapter {
             },
             body: JSON.stringify({
                 shit: {
-                    name
+                    name,
+                    shit_count: 0
                 }
             })
         })

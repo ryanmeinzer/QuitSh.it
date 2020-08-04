@@ -3,8 +3,8 @@ let newShitFormContainer = document.getElementById('new-shit-form-container')
 let shitContainer = document.getElementById('shit-container')
 // const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
 // const tipAdapter = new TipAdapter("http://localhost:3000/tips")
-const shitAdapter = new ShitAdapter("https://http://quitshit-backend.herokuapp.com/shits")
-const tipAdapter = new TipAdapter("https://http://quitshit-backend.herokuapp.com/tips")
+const shitAdapter = new ShitAdapter("https://quitshit-backend.herokuapp.com/shits")
+const tipAdapter = new TipAdapter("https://quitshit-backend.herokuapp.com/tips")
 // const shits = [] 
 
 // Display Add Shit Form
@@ -55,7 +55,7 @@ function makeShitDiv(shit) {
     return `
     <div id=shit-${shit.id} class='shit-div'>
         <div id=shit-${shit.id}-details>
-            <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitCount='${shit.shit_count}'> 💩 ${shit.shit_count}</button></h3>
+            <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitCount='${shit.shit_count}'> 💩 ${shit.shit_count} ▲ </button></h3>
         </div>
     </div>
     `
@@ -121,6 +121,6 @@ shitContainer.addEventListener('click', (e) => {
                 }
             })
         })
-        e.target.innerText = `💩 ${e.target.dataset.shitcount}`
+        e.target.innerText = `💩 ${e.target.dataset.shitcount} ▲ `
     }
 })
