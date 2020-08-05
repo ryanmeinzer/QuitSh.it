@@ -1,10 +1,10 @@
 // Select
 let newShitFormContainer = document.getElementById('new-shit-form-container')
 let shitContainer = document.getElementById('shit-container')
-// const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
-// const tipAdapter = new TipAdapter("http://localhost:3000/tips")
-const shitAdapter = new ShitAdapter("https://quitshit-backend.herokuapp.com/shits")
-const tipAdapter = new TipAdapter("https://quitshit-backend.herokuapp.com/tips")
+const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
+const tipAdapter = new TipAdapter("http://localhost:3000/tips")
+// const shitAdapter = new ShitAdapter("https://quitshit-backend.herokuapp.com/shits")
+// const tipAdapter = new TipAdapter("https://quitshit-backend.herokuapp.com/tips")
 // const shits = [] 
 
 // Display Add Shit Form
@@ -28,17 +28,16 @@ newShitFormContainer.addEventListener('submit', function (e) {
 // Do - Add Shit
         shitAdapter.addShit(shit)
         .then(function (shit) {
-            // if (shit.message) {
-            //     alert(shit.message)
-            // } else {
+            if (shit.message) {
+                alert(shit.message)
+            } else {
             shitContainer.innerHTML += makeShitDiv(shit)
             shitContainer.innerHTML +=  makeTipsDiv(shit)
-            // }
+            }
         })
         // .catch(function (error) {
         //     alert("error message")
-        //     document.body.innerHTML = error.message
-        // });
+        // })
     }
 })
 
@@ -132,6 +131,14 @@ shitContainer.addEventListener('click', (e) => {
                     })
                 })
         })
+        // e.target.disabled = true
+        // , { once: true }
+        // e.target.removeEventListener('click', e)
+        // e.target.removeEventListener('click', (e))
+        // debugger
+        // e.target.addEventListener('click', func)
+        // function func() { 'Hi' }, { once: true }
+        // debugger
     }
 })
 
