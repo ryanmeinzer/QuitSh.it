@@ -22,4 +22,18 @@ class ShitAdapter {
         })
         .then((obj) => obj.json())    
     }
+    fetchShit(e){
+        return fetch(`http://localhost:3000/shits/${e.target.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                shit: {
+                    shit_count: e.target.dataset.shitcount
+                }
+            })
+        })
+    }
 }

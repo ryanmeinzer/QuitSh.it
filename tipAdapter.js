@@ -19,4 +19,18 @@ class TipAdapter {
         })
             .then((obj) => obj.json())
     }
+    fetchTip(e){
+        return fetch(`http://localhost:3000/tips/${e.target.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                tip: {
+                    tip_count: e.target.dataset.tipcount
+                }
+            })
+        })
+    }
 }
