@@ -20,7 +20,7 @@ class TipAdapter {
             .then((obj) => obj.json())
     }
     fetchTip(e){
-        return fetch(`http://localhost:3000/tips/${e.target.id}`, {
+        return fetch(`${this.baseURL}/${e.target.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
