@@ -78,7 +78,7 @@ function makeTipsDiv(shit) {
     `
 }
 function makeTipLi(tip) {
-    return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}'> 💩 ${tip.tip_count} ▲ </button> </li>`
+    return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}'> 💡 ${tip.tip_count} ▲ </button> </li>`
 }
 
 // Display Add Tip Form
