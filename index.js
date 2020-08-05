@@ -6,6 +6,8 @@ let shitContainer = document.getElementById('shit-container')
 const shitAdapter = new ShitAdapter("https://quitshit-backend.herokuapp.com/shits")
 const tipAdapter = new TipAdapter("https://quitshit-backend.herokuapp.com/tips")
 // const shits = [] 
+let shitVotes = []
+let tipVotes = []
 
 // Display Add Shit Form
 newShitFormContainer.innerHTML = shitForm()
@@ -55,13 +57,24 @@ shitAdapter.fetchShits()
         })
     })
 function makeShitDiv(shit) {
-    return `
-    <div id=shit-${shit.id} class='shit-div'>
-        <div id=shit-${shit.id}-details>
-            <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}'> 💩 ${shit.shit_count} ▲ </button></h3>
-        </div>
-    </div>
-    `
+    // let shitButton = shit.id
+    if (shitVotes.includes(`${shit.id}`)) {
+        return `
+            <div id=shit-${shit.id} class='shit-div'>
+                <div id=shit-${shit.id}-details>
+                    <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}' disabled> 💩 ${shit.shit_count} ▲ </button></h3>
+                </div>
+            </div>
+        `
+    } else {
+        return `
+            <div id=shit-${shit.id} class='shit-div'>
+                <div id=shit-${shit.id}-details>
+                    <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}'> 💩 ${shit.shit_count} ▲ </button></h3>
+                </div>
+            </div>
+        `
+    }
 }
 function makeTipsDiv(shit) {
     let tipsArray = shit.tips
@@ -78,7 +91,11 @@ function makeTipsDiv(shit) {
     `
 }
 function makeTipLi(tip) {
-    return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}'> 💡 ${tip.tip_count} ▲ </button> </li>`
+    if (tipVotes.includes(`${tip.id}`)) {
+        return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}' disabled> 💡 ${tip.tip_count} ▲ </button> </li>`
+    } else {
+        return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}'> 💡 ${tip.tip_count} ▲ </button> </li>`
+    }
 }
 
 // Display Add Tip Form
@@ -116,6 +133,7 @@ shitContainer.addEventListener('click', (e) => {
     if (e.target.className == "shit-button") {
 // Do - Increase Shit Count
         e.target.dataset.shitcount = parseInt(e.target.dataset.shitcount) + 1
+        shitVotes.push(e.target.id)
         shitAdapter.fetchShit(e)
         .then(() => {
             shitAdapter.fetchShits()
@@ -131,14 +149,6 @@ shitContainer.addEventListener('click', (e) => {
                     })
                 })
         })
-        // e.target.disabled = true
-        // , { once: true }
-        // e.target.removeEventListener('click', e)
-        // e.target.removeEventListener('click', (e))
-        // debugger
-        // e.target.addEventListener('click', func)
-        // function func() { 'Hi' }, { once: true }
-        // debugger
     }
 })
 
@@ -149,6 +159,7 @@ shitContainer.addEventListener('click', (e) => {
     if (e.target.className == "tip-button") {
         // Do - Increase Tip Count
         e.target.dataset.tipcount = parseInt(e.target.dataset.tipcount) + 1
+        tipVotes.push(e.target.id)
         tipAdapter.fetchTip(e)
         .then(() => {
             shitAdapter.fetchShits()
@@ -164,6 +175,5 @@ shitContainer.addEventListener('click', (e) => {
                     })
                 })
         })
-        // e.target.innerText = `💩 ${e.target.dataset.tipcount} ▲ `
     }
 })
