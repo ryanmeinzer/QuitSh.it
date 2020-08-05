@@ -120,8 +120,12 @@ shitContainer.addEventListener('submit', function (e) {
 // Do - Add Tip
         tipAdapter.addTip(tip)
             .then(function (tip) {
+                if (tip.message) {
+                    alert(tip.message)
+                } else {
                     let tipShitListUl = document.getElementById(`shit-${tip.shit_id}-tips-list`)
                     tipShitListUl.innerHTML += makeTipLi(tip)
+                }
             })
     }
 })
