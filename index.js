@@ -1,10 +1,10 @@
 // Select
 let newShitFormContainer = document.getElementById('new-shit-form-container')
 let shitContainer = document.getElementById('shit-container')
-const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
-const tipAdapter = new TipAdapter("http://localhost:3000/tips")
-// const shitAdapter = new ShitAdapter("https://quitshit-backend.herokuapp.com/shits")
-// const tipAdapter = new TipAdapter("https://quitshit-backend.herokuapp.com/tips")
+// const shitAdapter = new ShitAdapter("http://localhost:3000/shits")
+// const tipAdapter = new TipAdapter("http://localhost:3000/tips")
+const shitAdapter = new ShitAdapter("https://quitshit-backend.herokuapp.com/shits")
+const tipAdapter = new TipAdapter("https://quitshit-backend.herokuapp.com/tips")
 // const shits = [] 
 
 // Display Add Shit Form
@@ -117,7 +117,7 @@ shitContainer.addEventListener('click', (e) => {
     if (e.target.className == "shit-button") {
 // Do - Increase Shit Count
         e.target.dataset.shitcount = parseInt(e.target.dataset.shitcount) + 1
-        fetch(`http://localhost:3000/shits/${e.target.id}`, {
+        fetch(`https://quitshit-backend.herokuapp.com/shits/${e.target.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -153,7 +153,7 @@ shitContainer.addEventListener('click', (e) => {
     if (e.target.className == "tip-button") {
         // Do - Increase Tip Count
         e.target.dataset.tipcount = parseInt(e.target.dataset.tipcount) + 1
-        fetch(`http://localhost:3000/tips/${e.target.id}`, {
+        fetch(`https://quitshit-backend.herokuapp.com/tips/${e.target.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
