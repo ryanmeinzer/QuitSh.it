@@ -22,6 +22,14 @@ body {
     margin: 0rem 2rem;
 }
 
+/* Mobile Responsiveness */
+
+@media (max-width: 500px) {
+        #shit-container {
+            border: 1px solid black;
+        }
+    }
+
 /* Add New Shit Form */
 
 .add-shit-form input[type=text] {
