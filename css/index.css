@@ -22,14 +22,6 @@ body {
     margin: 0rem 2rem;
 }
 
-/* Mobile Responsiveness */
-
-@media (max-width: 500px) {
-        #shit-container {
-            /* border: 1px solid black; */
-        }
-    }
-
 /* Add New Shit Form */
 
 .add-shit-form input[type=text] {
@@ -138,3 +130,39 @@ button:disabled {
 li {
     margin: .25rem auto;
 }
+
+/* Mobile Responsiveness */
+
+@media (max-width: 500px) {
+    .add-shit-form { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .add-shit-form input[type=text] {
+        width: 75%;
+    }
+    .add-shit-form input[type=text]:focus {
+        width: 100%;
+    }
+    .add-shit-form input[type=submit] {
+        margin: 1rem auto 2rem auto;
+    }
+
+    .add-tip-form { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .add-tip-form input[type=text] {
+        width: 75%;
+    }
+    .add-tip-form input[type=text]:focus {
+        width: 100%;
+    }
+    .add-tip-form input[type=submit] {
+        margin: 1rem auto .25rem auto;
+    }
+}
+
+
