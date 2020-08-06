@@ -26,7 +26,7 @@ body {
 
 @media (max-width: 500px) {
         #shit-container {
-            border: 1px solid black;
+            /* border: 1px solid black; */
         }
     }
 
