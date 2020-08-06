@@ -5,7 +5,7 @@ let shitContainer = document.getElementById('shit-container')
 // const tipAdapter = new TipAdapter("http://localhost:3000/tips")
 const shitAdapter = new ShitAdapter("https://quitshit-backend.herokuapp.com/shits")
 const tipAdapter = new TipAdapter("https://quitshit-backend.herokuapp.com/tips")
-// const shits = [] 
+// const shits = []
 let shitVotes = []
 let tipVotes = []
 
