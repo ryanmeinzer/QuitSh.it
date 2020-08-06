@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+
+#logo {
+    text-align: center;
+    font-size: 5rem;
+}
+
+#brand {
+    font-family: 'Henny Penny', cursive;
+    text-align: center;
+    font-size: 3rem;
+    margin: auto auto 1rem auto;
+}
+
+#new-shit-form-container {
+    text-align: center;
+}
+
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    margin: 0rem 2rem;
+}
+
+/* Add New Shit Form */
+
+.add-shit-form input[type=text] {
+    width: 15%;
+    padding: .25rem .25rem;
+    border: 2px solid #7B4A12;
+    border-radius: 4px;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+}
+
+.add-shit-form input[type=text]:focus {
+    background-color: #EFDD6F;
+    width: 30%;
+}
+
+.add-shit-form input[type=submit] {
+  background-color: #BA6222;
+  border: none;
+  color: white;
+  padding: .25rem .75rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #7B4A12;
+  border-radius: 5px;
+}
+
+/* Add Quit Tip Forms */
+
+.add-tip-form input[type=text] {
+    width: 25%;
+    padding: .25rem .25rem;
+    border: 2px solid #7B4A12;
+    border-radius: 4px;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+}
+
+.add-tip-form input[type=text]:focus {
+    background-color: #EFDD6F;
+    border: 2px solid #7B4A12;
+    width: 50%;
+}
+
+.add-tip-form input[type=submit] {
+    background-color: #738F9B;
+    border: none;
+    color: white;
+    padding: .25rem .75rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #7B4A12;
+    border-radius: 5px;
+}
+
+/* Style Tip Div */
+
+.tip-div {
+    margin: auto auto 3rem auto;
+    /* border: 2px solid #7B4A12;
+    border-style: none none solid none;
+    border-radius: 5px; */
+}
+
+/* Voting Button Style */
+
+button {
+    background-color: #EFDD6F;
+    border: none;
+    color: black;
+    padding: .25rem .75rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #7B4A12;
+    border-radius: 5px;
+    outline: none;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Align Shit Button to Middle */
+
+.shit-button {
+    vertical-align: middle;
+}
+
+/* li styles */
+
+li {
+    margin: .25rem auto;
+}

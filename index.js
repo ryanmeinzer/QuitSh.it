@@ -62,7 +62,7 @@ function makeShitDiv(shit) {
         return `
             <div id=shit-${shit.id} class='shit-div'>
                 <div id=shit-${shit.id}-details>
-                    <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}' disabled> 💩 ${shit.shit_count} ▲ </button></h3>
+                    <h2>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}' disabled> 💩 ${shit.shit_count} ▲ </button></h2>
                 </div>
             </div>
         `
@@ -70,7 +70,7 @@ function makeShitDiv(shit) {
         return `
             <div id=shit-${shit.id} class='shit-div'>
                 <div id=shit-${shit.id}-details>
-                    <h3>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}'> 💩 ${shit.shit_count} ▲ </button></h3>
+                    <h2>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}'> 💩 ${shit.shit_count} ▲ </button></h2>
                 </div>
             </div>
         `
