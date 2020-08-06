@@ -63,7 +63,7 @@ body {
 
 .add-tip-form input[type=text] {
     width: 25%;
-    padding: .25rem 5rem;
+    padding: .25rem .5rem;
     border: 2px solid #7B4A12;
     border-radius: 4px;
     outline: none;
@@ -141,9 +141,11 @@ li {
     }
     .add-shit-form input[type=text] {
         width: 75%;
+        font-size: 16px;
     }
     .add-shit-form input[type=text]:focus {
         width: 100%;
+        font-size: 16px;
     }
     .add-shit-form input[type=submit] {
         margin: 1rem auto 2rem auto;
@@ -156,9 +158,11 @@ li {
     }
     .add-tip-form input[type=text] {
         width: 75%;
+        font-size: 16px;
     }
     .add-tip-form input[type=text]:focus {
         width: 100%;
+        font-size: 16px;
     }
     .add-tip-form input[type=submit] {
         margin: 1rem auto .25rem auto;
