@@ -62,7 +62,7 @@ function makeShitDiv(shit) {
         return `
             <div id=shit-${shit.id} class='shit-div'>
                 <div id=shit-${shit.id}-details>
-                    <h2>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}' disabled> 💩 ${shit.shit_count} ▲ </button></h2>
+                    <h2>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}' title="One upvote allowed per 💩" disabled> 💩 ${shit.shit_count} ▲ </button></h2>
                 </div>
             </div>
         `
@@ -70,7 +70,7 @@ function makeShitDiv(shit) {
         return `
             <div id=shit-${shit.id} class='shit-div'>
                 <div id=shit-${shit.id}-details>
-                    <h2>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}'> 💩 ${shit.shit_count} ▲ </button></h2>
+                    <h2>${shit.name} <button id='${shit.id}' class='shit-button' data-shitcount='${shit.shit_count}' title="Upvote this 💩"> 💩 ${shit.shit_count} ▲ </button></h2>
                 </div>
             </div>
         `
@@ -92,9 +92,9 @@ function makeTipsDiv(shit) {
 }
 function makeTipLi(tip) {
     if (tipVotes.includes(`${tip.id}`)) {
-        return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}' disabled> 💡 ${tip.tip_count} ▲ </button> </li>`
+        return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}' title="One upvote allowed per 💡" disabled> 💡 ${tip.tip_count} ▲ </button> </li>`
     } else {
-        return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}'> 💡 ${tip.tip_count} ▲ </button> </li>`
+        return `<li>${tip.description} <button id='${tip.id}' class='tip-button' data-tipcount='${tip.tip_count}' title="Upvote this 💡"> 💡 ${tip.tip_count} ▲ </button> </li>`
     }
 }
 
