@@ -16,4 +16,4 @@ Add bad habits and quit tips. Upvote bad habits and quit tips.
 
 ## Screenshot
 
-![QuitSh.it Screenshot](/quitshit-screenshot.png)
+![QuitSh.it Screenshot](/quitsh*it-screenshot.png)
