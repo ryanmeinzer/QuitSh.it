@@ -15,7 +15,7 @@ function shitForm() {
     return `
       <form class="add-shit-form" id="shit-form">
         <input type="text" name="name" value="" required>
-        <input type="submit" value="Add New Sh.it to Quit">
+        <input type="submit" value="Add New Bad Habit to Quit">
       </form>
   `
 }
