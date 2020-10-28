@@ -6,9 +6,9 @@ Everyone has bad habits that they want to quit. So, I decided to create an app t
 
 Go to www.QuitSh.it. It's mobile-friendly!
 
-Frontend Code Repository - https://github.com/ryanmeinzer/QuitShit-Frontend
+Frontend Code Repository - https://github.com/ryanmeinzer/QuitSh.it-Frontend
 
-Backend Code Repository - https://github.com/ryanmeinzer/QuitShit-Backend
+Backend Code Repository - https://github.com/ryanmeinzer/QuitSh.it-Backend
 
 ## Features
 
