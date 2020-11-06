@@ -14,6 +14,10 @@ Backend Code Repository - https://github.com/ryanmeinzer/QuitSh.it-Backend
 
 Add bad habits and quit tips. Upvote bad habits and quit tips.  
 
+## Build Log & Future Updates
+
+https://trello.com/b/SA8F8Z0x
+
 ## Screenshot
 
 ![QuitSh.it Screenshot](/quitsht-screenshot.png)
